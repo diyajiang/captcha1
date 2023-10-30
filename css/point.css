@@ -1,0 +1,69 @@
+.containn{
+    width: 400px;
+    height: 500px;
+    margin-top: 80px;
+    margin-left: 20px;
+}
+
+.box{
+    width: 340px;
+    height: 340px;
+    margin-top: 20px;
+    border: 10px solid #fff;
+    border-radius: 10px;
+    position: relative;
+}
+.box .fl{
+    width: 320px;
+    height: 100px;
+    position: absolute;
+}
+/* 小绿点 */
+.box .radio{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #1abd6c;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    position: absolute;
+    z-index: 99;
+}
+/* 要点击的文字 */
+.box span{
+    font-size: 30px;
+    color: blueviolet;
+    font-weight: bold;
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+}
+/* 顶部提示区 */
+.tit-box{
+    width: 380px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 26px;
+    text-align: center;
+    line-height: 50px;
+    color:  rgb(171, 128, 202);
+    margin-left: -18px;
+    background-color: #fff;
+    margin-top: -20px;
+}
+.tit-box span{
+    color: rgb(82, 54, 102);
+    font-weight: bold;
+    font-size: larger;
+}
+/* 背景图 模糊 */
+.bg-blur{
+    background: url('../image/bgpicture.jpg') no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    /* 模糊滤镜 */
+    filter: blur(10px);
+}

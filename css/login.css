@@ -1,0 +1,22 @@
+#contain{
+    position: absolute;
+    margin: auto;
+    width: 1800px;
+    height: 500px;
+    text-align: center; /*让div内部文字居中*/
+	border-radius: 20px;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+
+}
+.login{
+    width: 400px;
+    height: 500px;
+    float: left;
+    background-color: white;
+    margin-right:200px ;
+    border-radius: 20px;
+}
