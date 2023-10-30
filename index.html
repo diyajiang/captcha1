@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多种验证码登录页面</title>
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/drag_verify.css">
+    <link rel="stylesheet" href="./css/puzzle.css">
+    <link rel="stylesheet" href="./css/point.css">
+    <link rel="stylesheet" href="./css/picture.css">
+    <style>
+        body {
+            /*加载背景图：图片地址 不平铺 */
+            background: url(./image/bgpicture.jpg) no-repeat center center;
+            /* 让背景图基于容器大小伸缩 */
+            background-size: cover;
+            /* fixed 背景图片不会随着页面的滚动而滚动。*/
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <div id="contain">
+       <!-- 滑动验证 -->
+       <div  class="login">
+             <p class="text">滑动下方滑块至最右端即可完成验证</p>
+             <div id="drag"> 
+             <div id="dragbg"></div>
+             <div id="dragtext"></div>
+             <div id="draghandler" class="draghandlerbg"></div>
+          </div>
+       </div>
+       <!-- 滑块验证 -->
+       <div  class="login">
+        <p class="text">滑动下方滑块完成拼图即可完成验证</p>
+        <div class="container">
+            <div id="captcha" style="position: relative;">
+    
+            </div>
+            <div id="msg"></div>
+        </div>
+       </div>
+      <!-- &lt;!&ndash; 图形验证 &ndash;&gt;
+       <div class="login">
+        <p class="text">填写图中信息即可完成验证</p>
+            <div class="password1">
+                图形验证码
+             </div>
+             <div class="password2">
+               <input type="text" id="verifycode"    placeholder="请输入验证码" maxlength="6" style="height: 30px;background-color: rgb(212, 189, 216);border: 0ch;font-size: larger;text-align: center;">
+             </div>
+             <div class="password3" type="submit"  onclick="login()">
+                 登录
+             </div>
+        
+       </div>-->
+       <!-- 点选验证 -->
+       <div  class="login">
+        <div class="containn">
+            <div class="verify-box">
+                <div class="tit-box"></div>
+                <div class="box">
+                    <div class="bg-blur"></div>
+                </div>
+                
+            </div>
+        </div>
+       </div>
+    </div>
+   
+</body>
+</html>
+<script src="./js/drag_verify.js"></script>
+<script src="./js/point.js"></script>
+<script src="./js/puzzle.js"></script>
+<script>
+    captcha.init(document.getElementById('captcha'),function(){
+        document.getElementById('msg').innerHTML='验证成功';
+        setTimeout(() => {
+            document.getElementById('msg').innerHTML='';
+        }, 2000);
+    },function(){
+        document.getElementById('msg').innerHTML='验证失败';
+        setTimeout(() => {
+            document.getElementById('msg').innerHTML='';
+        }, 1000);
+    })
+    function login(){
+        if(!$("#verifycode").val()){
+            alert("请输入验证码");
+        }
+    }
+</script>
